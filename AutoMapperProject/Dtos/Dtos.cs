@@ -19,7 +19,7 @@ namespace Dtos
         //public int? Place { get; set; }
         //public int? Level { get; set; }
         //public int State { get; set; }
-        public WeekType[] Weeks { get; set; }
+        //public WeekType[] Weeks { get; set; }
     }
 
 

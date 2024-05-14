@@ -20,9 +20,9 @@ namespace AutoMapperProject.Controllers
         {
             var result = AutoMapperHelper<Entities.Plan, Dtos.PlanTypeDto>.ConvertToEntity(dto, _mapper);
 
+            List<Entities.PlanTag> planTags = new List<Entities.PlanTag>();
             foreach (var tag in dto.Tags)
             {
-                List<Entities.PlanTag> planTags = new List<Entities.PlanTag>();
                 planTags.Add(new Entities.PlanTag
                 {
                     Tag = new Entities.Tag
@@ -34,8 +34,9 @@ namespace AutoMapperProject.Controllers
                         Name = dto.PlanName
                     }
                 });
-                result.PlanTags = planTags;
+                
             }
+            result.PlanTags = planTags;
 
             return Ok(result);
         }
